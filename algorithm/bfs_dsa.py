@@ -47,7 +47,7 @@ class GraphBFS:
                     queue.append(neighbor)
                     self.came_from[neighbor] = node
 
-        return None  # Jika tidak ada jalur yang ditemukan
+        return None
 
 # **Eksekusi BFS dengan grid 5x5**
 grid = np.zeros((5, 5), dtype=int)
