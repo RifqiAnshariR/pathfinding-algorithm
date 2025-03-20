@@ -48,12 +48,3 @@ class GraphBFS:
                     self.came_from[neighbor] = node
 
         return None
-
-# **Eksekusi BFS dengan grid 5x5**
-grid = np.zeros((5, 5), dtype=int)
-bfs = GraphBFS()
-start = (3, 1)
-goal = (4, 4)
-
-path = bfs.bfs(grid, start, goal)
-print("Jalur:", path)

@@ -49,12 +49,3 @@ class GraphDFS:
             return None
 
         return _dfs_recursive(start_idx)
-
-# **Eksekusi DFS dengan grid 5x5**
-grid = np.zeros((5, 5), dtype=int)
-dfs = GraphDFS()
-start = (3, 1)
-goal = (4, 4)
-
-path = dfs.dfs(grid, start, goal)
-print("Jalur:", path)

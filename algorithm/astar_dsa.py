@@ -27,7 +27,7 @@ class GraphAStar:
     def calculateHeuristic(self, current_idx, target_idx):
         return abs(current_idx[0] - target_idx[0]) + abs(current_idx[1] - target_idx[1])
 
-    def isValid(self, height, width, neighbor):
+    def isValid(self, height, width, grid, neighbor):
         return (0 <= neighbor[0] < height) and (0 <= neighbor[1] < width) and (grid[neighbor] == 0)
     
     def reconstructPath(self, height, start, goal):
@@ -59,7 +59,7 @@ class GraphAStar:
             for dr, dc in [(-1, 0), (1, 0), (0, -1), (0, 1)]:  # Atas, Bawah, Kiri, Kanan
                 neighbor = (row + dr, col + dc)
 
-                if self.isValid(height, width, neighbor):
+                if self.isValid(height, width, grid, neighbor):
                     tentative_g_score = g_score[current_idx] + 1
 
                     if (neighbor not in g_score) or (tentative_g_score < g_score[neighbor]):
@@ -69,12 +69,3 @@ class GraphAStar:
                         self.came_from[neighbor] = current_idx
 
         return None
-
-# **Eksekusi A* dengan grid 5x5**
-grid = np.zeros((5, 5), dtype=int)
-astar = GraphAStar()
-start = (3, 1)
-goal = (4, 4)
-
-path = astar.aStar(grid, start, goal)
-print("Jalur:", path)
