@@ -1,6 +1,6 @@
 # 📌 Description  
-**Python Pathfinding Algorithm**  
-Python pathfinding algorithm. Implements of: DFS, BFS, and A-Star algorithm.
+**Python Pathfinding Algorithms**  
+Implementation of pathfinding algorithms in Python, including DFS, BFS, and A*.
 
 # 🚀 How to Run  
 1. **Run file in Terminal**  
